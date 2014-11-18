@@ -1,48 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>大大安安想去哪？</title>
-<style type="text/css">
-body {
-	background-image: url();
-	background-repeat: repeat;
-}
-</style>
-</head>
 
-<body>
-<p>Hello, world. - from JC ;) 揪瞇</p>
-<script type="text/javascript">
-function AlertIt(){
-	//亂數
-	var myrandom = Math.round(Math.random()*2)
-	//一些白痴的話，用矩陣 Array
-	var messages = new Array()
-	messages[0] = "大大安安，想怎樣？"
-	messages[1] = "今天天氣好，想怎樣？"
-	messages[2] = "無聊嗎？來看影片～"
-	//連結清單
-	var links = new Array()
-	links[0] = "http://www.google.com"
-	links[1] = "http://www.yahoo.com"
-	links[2] = "http://www.youtube.com"
-	links[3] = "http://www.ntut.edu.tw"
-	//呼叫確認視窗
-	var answer = confirm(messages[myrandom])
-	//重點來了，如果點「是」，就連去該變數所指的網站
-	if (answer){
-		window.location = links[myrandom]
-	} 
-}
-</script>
-
-<table width="100%" height ="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="center" valign="middle"><a href="javascript:AlertIt();"><img src="JuChunKo.png" width="33%" height="auto"><p>按我</p></a></td>
-  </tr>
-</table>
-
-
-</body>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Elastic Stack</title>
+		<meta name="description" content="Elastic Stack - Elastic dragging interaction" />
+		<meta name="keywords" content="elastic thumnails, draggabilly, navigate, touch, " />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-7243260-2']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/AnimatedSVGIcons/"><span>Previous Demo</span></a>
+				<span class="right"><a href="http://www.guzk.es/">Illustrations by Guzk</a><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17004"><span>Back to the Codrops Article</span></a></span>
+			</div>
+			<header>
+				<h1>Elastic Stack <span>Elastic dragging interaction <span>Idea from this <a href="http://dribbble.com/shots/1221770-PassPic">Dribbble shot by CreativeDash</a></span></span></h1>
+			</header>
+			<ul id="elasticstack" class="elasticstack">
+				<li><img src="img/1.jpg" alt="01"/><h5>Saudade</h5></li>
+				<li><div class="overlay"></div><img src="img/2.jpg" alt="02"/><h5>Tuqburni</h5></li>
+				<li><img src="img/3.jpg" alt="03"/><h5>Retrouvailles</h5></li>
+				<li><img src="img/4.jpg" alt="04"/><h5>Onsra</h5></li>
+				<li><img src="img/5.jpg" alt="05"/><h5>Mamihlapinatapai</h5></li>
+				<li><img src="img/6.jpg" alt="06"/><h5>Koi No Yokan</h5></li>
+			</ul>
+			<section class="related">
+				<p>If you enjoyed this, you might also like:</p>
+				<div><a href="http://tympanus.net/Development/BookBlock/"><h4>BookBlock <span>Content flip plugin</span></h4></a></div>
+				<div><a href="http://tympanus.net/Development/Windy/"><h4>Windy <span>Swift content navigation</span></h4></a></div>
+				<div><a href="http://tympanus.net/Development/Baraja/"><h4>Baraja <span>Spread items in a card-like fashion</span></h4></a></div>
+			</section>
+		</div><!-- /container -->
+		<script src="js/draggabilly.pkgd.min.js"></script>
+		<script src="js/elastiStack.js"></script>
+		<script>
+			new ElastiStack( document.getElementById( 'elasticstack' ) );
+		</script>
+				<!-- For the demo ad only -->   
+<script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+	</body>
 </html>
