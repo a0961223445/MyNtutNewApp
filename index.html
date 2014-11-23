@@ -16,6 +16,18 @@ html, body , .outer, .inner {
     margin:0;
 } 
 </style>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>BookBlock: A Content Flip Plugin - Demo 5</title>
+		<meta name="description" content="Bookblock: A Content Flip Plugin - Demo 5" />
+		<meta name="keywords" content="javascript, jquery, plugin, css3, flip, page, 3d, booklet, book, perspective" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<!-- custom demo style -->
+		<link rel="stylesheet" type="text/css" href="css/demo5.css" />
+		<script src="js/modernizr.custom.js"></script>
 </head>
 
 <body>
@@ -49,7 +61,28 @@ function AlertIt(){
     <td align="center" valign="middle">
 		<p>Hello, world. - from JC ;) ´ª½N</p>
 		<a href="javascript:AlertIt();">
-			<img src="images/dAbHead.png" width="33%" height="auto">
+
+
+				<ul class="bb-custom-grid" id="bb-custom-grid">
+					<li>
+						<h3>Neonmob set</h3>
+						<div class="bb-bookblock">
+							<div class="bb-item"><a href="http://dribbble.com/shots/614568-Lands-Devil-Spirit-Jinx"><img src="images/demo3/1.jpg" alt="image01"/></a></div>
+							<div class="bb-item"><a href="http://dribbble.com/shots/614264-Lands-Antspearer"><img src="images/demo3/2.jpg" alt="image02"/></a></div>
+							<div class="bb-item"><a href="http://dribbble.com/shots/614153-Lands-Bonemonster"><img src="images/demo3/3.jpg" alt="image03"/></a></div>
+							<div class="bb-item"><a href="http://dribbble.com/shots/614073-Lands-Boneater"><img src="images/demo3/4.jpg" alt="image04"/></a></div>
+						</div>
+						<nav>
+							<span class="bb-current"></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</nav>
+					</li>
+				
+					
+				</ul>
+
 			<p>«ö§Ú</p>
 		</a>
 	</td>
@@ -57,5 +90,57 @@ function AlertIt(){
 </table>
 
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script type="text/javascript">
+			var Page = (function() {
+
+				var $grid = $( '#bb-custom-grid' );
+
+				return {
+					init : function() {
+						$grid.find( 'div.bb-bookblock' ).each( function( i ) {
+							
+							var $bookBlock = $( this ),
+								$nav = $bookBlock.next().children( 'span' ),
+								bb = $bookBlock.bookblock( {
+									speed : 600,
+									shadows : false
+								} );
+								
+							// add navigation events
+							$nav.each( function( i ) {
+								$( this ).on( 'click touchstart', function( event ) {
+									var $dot = $( this );
+									$nav.removeClass( 'bb-current' );
+									$dot.addClass( 'bb-current' );
+									$bookBlock.bookblock( 'jump', i + 1 );
+									return false;
+								} );
+							} );
+							
+							// add swipe events
+							$bookBlock.children().on( {
+								'swipeleft' : function( event ) {
+									$bookBlock.bookblock( 'next' );
+									return false;
+								},
+								'swiperight' : function( event ) {
+									$bookBlock.bookblock( 'prev' );
+									return false;
+								}
+
+							} );
+							
+						} );
+					}
+				};
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
 </body>
 </html>
