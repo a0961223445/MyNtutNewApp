@@ -194,18 +194,16 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: none;
+	display: none;position: relative;
 	background: #fff;
 }
 
 /* No JS */
 .no-js .bb-bookblock, 
 .no-js ul.bb-custom-grid li {
-	width: auto;
-	height: auto;
 }
 
 .no-js .bb-item {
 	display: block;
-	position: relative;
+	
 }
